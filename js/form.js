@@ -3,6 +3,8 @@
 const name = document.querySelector("#name");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
+const message = document.querySelector("#message");
+const submitBtn = document.querySelector("#submitBtn");
 
 //Name Field Validation
 // Run on Input in Name Field 
@@ -70,3 +72,27 @@ function show_pass() {
     }
 }
 
+// Run on Click on Submit Button
+submitBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    if ((email.value != "") && (name.value != "") && (message.value != ""), (password.value != "")) {
+        if ((email.classList[1] == "is-valid") && (name.classList[1] == "is-valid") && (password.classList[1] == "is-valid")) {
+            document.getElementById("alert").classList.add("show");
+            document.getElementById("alert").classList.add("alert-success");
+            document.getElementById("alert").classList.remove("alert-danger");
+            document.getElementById("alert").innerHTML = "Message Send Successfully";
+        } else {
+            document.getElementById("alert").classList.add("show");
+            document.getElementById("alert").classList.remove("alert-success");
+            document.getElementById("alert").classList.add("alert-danger");
+            document.getElementById("alert").innerHTML = "Your Information Is Not Valid.";
+        }
+    } else {
+        document.getElementById("alert").classList.add("show");
+        document.getElementById("alert").classList.remove("alert-success");
+        document.getElementById("alert").classList.add("alert-danger");
+        document.getElementById("alert").innerHTML = "Please Fill All The Fields.";
+
+    }
+
+}) 
