@@ -75,7 +75,7 @@ function show_pass() {
 // Run on Click on Submit Button
 submitBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    if ((email.value != "") && (name.value != "") && (message.value != ""), (password.value != "")) {
+    if ((email.value != "") && (name.value != "") && (message.value != "") && (password.value != "")) {
         if ((email.classList[1] == "is-valid") && (name.classList[1] == "is-valid") && (password.classList[1] == "is-valid")) {
             document.getElementById("alert").classList.add("show");
             document.getElementById("alert").classList.add("alert-success");
